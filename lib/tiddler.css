@@ -1,0 +1,334 @@
+.component-wrapper {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+}
+.component-wrapper > :not(:last-child) {
+  margin-right: 0.5em;
+}
+.component-wrapper > input {
+  height: 42px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: inherit;
+  margin: 15px;
+}
+.component-wrapper > input:hover {
+  border-color: #666;
+}
+.component-wrapper > input:focus {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+.component-wrapper > input[disabled] {
+  border-color: #bbb;
+  color: #bbb;
+  cursor: not-allowed;
+}
+.component-wrapper.error > input {
+  border-color: #f1453d;
+}
+.component-wrapper .component-errorMessage {
+  color: #f1453d;
+}
+
+.component-button {
+  box-sizing: border-box;
+  height: 32px;
+  padding: 0 12px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  background: white;
+  color: #333;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  transition: background 250ms;
+}
+.component-button + .component-button {
+  margin-left: 8px;
+}
+.component-button:hover, .component-button:focus {
+  color: #40a9ff;
+  border-color: #40a9ff;
+}
+.component-button:focus {
+  outline: none;
+}
+.component-button::-moz-focus-inner {
+  border: 0;
+}
+.component-button.component-theme-link {
+  border-color: transparent;
+  box-shadow: none;
+  color: #40a9ff;
+}
+.component-button.component-theme-link:hover, .component-button.component-theme-link:focus {
+  color: #73c0ff;
+}
+.component-button.component-theme-text {
+  border-color: transparent;
+  box-shadow: none;
+  color: inherit;
+}
+.component-button.component-theme-text:hover, .component-button.component-theme-text:focus {
+  background: #f2f2f2;
+}
+.component-button.component-size-big {
+  font-size: 24px;
+  height: 48px;
+  padding: 0 16px;
+}
+.component-button.component-size-small {
+  font-size: 12px;
+  height: 20px;
+  padding: 0 4px;
+}
+.component-button.component-theme-button.component-level-main {
+  background: #40a9ff;
+  color: white;
+  border-color: #40a9ff;
+}
+.component-button.component-theme-button.component-level-main:hover, .component-button.component-theme-button.component-level-main:focus {
+  background: #0d92ff;
+  border-color: #0d92ff;
+}
+.component-button.component-theme-button.component-level-danger {
+  background: red;
+  border-color: red;
+  color: white;
+}
+.component-button.component-theme-button.component-level-danger:hover, .component-button.component-theme-button.component-level-danger:focus {
+  background: #cc0000;
+  border-color: #cc0000;
+}
+.component-button.component-theme-link.component-level-normal {
+  color: black;
+}
+.component-button.component-theme-link.component-level-normal:hover, .component-button.component-theme-link.component-level-normal:focus {
+  color: black;
+}
+.component-button.component-theme-link.component-level-danger {
+  color: red;
+}
+.component-button.component-theme-link.component-level-danger:hover, .component-button.component-theme-link.component-level-danger:focus {
+  color: #cc0000;
+}
+.component-button.component-theme-text.component-level-main {
+  color: #40a9ff;
+}
+.component-button.component-theme-text.component-level-main:hover, .component-button.component-theme-text.component-level-main:focus {
+  color: #0d92ff;
+}
+.component-button.component-theme-text.component-level-danger {
+  color: red;
+}
+.component-button.component-theme-text.component-level-danger:hover, .component-button.component-theme-text.component-level-danger:focus {
+  color: #cc0000;
+}
+.component-button.component-theme-button[disabled] {
+  cursor: not-allowed;
+  color: grey;
+}
+.component-button.component-theme-button[disabled]:hover {
+  border-color: grey;
+}
+.component-button.component-theme-link[disabled], .component-button.component-theme-text[disabled] {
+  cursor: not-allowed;
+  color: grey;
+}
+.component-button > .component-loadingIndicator {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 4px;
+  border-radius: 8px;
+  border-color: #40a9ff #40a9ff #40a9ff transparent;
+  border-style: solid;
+  border-width: 2px;
+  animation: component-spin 1s infinite linear;
+}
+
+@keyframes component-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.component-dialog {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  min-width: 15em;
+  max-width: 90%;
+}
+.component-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.component-dialog-wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+.component-dialog > header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.component-dialog > main {
+  padding: 12px 16px;
+}
+.component-dialog > footer {
+  border-top: 1px solid #d9d9d9;
+  padding: 12px 16px;
+  text-align: right;
+}
+.component-dialog-close {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.component-dialog-close::before, .component-dialog-close::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: black;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+}
+.component-dialog-close::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.component-dialog-close::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#messages {
+  position: fixed;
+  left: 50%;
+  top: 30px;
+  transform: translate3d(-50%, 0, 0);
+  z-index: 1000;
+}
+
+.component-message {
+  width: 350px;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  margin-top: 10px;
+}
+.component-message.icon {
+  padding: 1px;
+}
+.component-message > .component-message-content {
+  padding-left: 15px;
+}
+
+.component-theme-information {
+  background: #edf2fc;
+}
+
+.component-theme-success {
+  background: #f0f9eb;
+}
+
+.component-theme-warning {
+  background: #fdf6ec;
+}
+
+.component-theme-error {
+  background: #fef0f0;
+}
+
+.component-switch {
+  height: 22px;
+  width: 44px;
+  border: none;
+  background: #bfbfbf;
+  border-radius: 11px;
+  position: relative;
+}
+.component-switch > span {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 18px;
+  width: 18px;
+  background: white;
+  border-radius: 9px;
+  transition: all 250ms;
+}
+.component-switch.component-checked {
+  background: #1890ff;
+}
+.component-switch.component-checked > span {
+  left: calc(100% - 18px - 2px);
+}
+.component-switch:focus {
+  outline: none;
+}
+.component-switch:active > span {
+  width: 22px;
+}
+.component-switch.component-checked:active > span {
+  width: 22px;
+  margin-left: -4px;
+}
+
+.component-tabs-nav {
+  display: flex;
+  color: #333;
+  border-bottom: 1px solid #d9d9d9;
+  position: relative;
+}
+.component-tabs-nav-item {
+  padding: 8px 0;
+  margin: 0 16px;
+  cursor: pointer;
+}
+.component-tabs-nav-item:first-child {
+  margin-left: 0;
+}
+.component-tabs-nav-item.selected {
+  color: #40a9ff;
+}
+.component-tabs-nav-indicator {
+  position: absolute;
+  height: 3px;
+  background: #40a9ff;
+  left: 0;
+  bottom: -1px;
+  width: 40px;
+  transition: all 250ms;
+}
+.component-tabs-content {
+  padding: 8px 0;
+}
+.component-tabs-content-item {
+  display: none;
+}
+.component-tabs-content-item.selected {
+  display: block;
+}
